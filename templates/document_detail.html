@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="知识文档归属与分片管理" />
+    <title>文档详情 · 知识库管理</title>
+    <link rel="icon" href="{{ base_path }}/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ base_path }}/static/styles.css?v=20260921.4" />
+  </head>
+  <body class="admin-body" data-document-id="{{ document_id }}" data-base-path="{{ base_path }}">
+    <header class="topbar">
+      <a class="brand" href="{{ base_path }}/admin">
+        <span class="brand-mark">AI</span>
+        <span><strong>文档详情</strong><small>知识归属与片段工作台</small></span>
+      </a>
+      <div class="topbar-actions">
+        <span id="healthBadge" class="health-badge pending"><i></i>正在读取</span>
+        <button id="logoutButton" class="button ghost" type="button" hidden>退出后台</button>
+        <a class="button ghost" href="{{ base_path }}/admin">返回知识库</a>
+      </div>
+    </header>
+
+    <main class="detail-layout">
+      <section class="detail-hero">
+        <div>
+          <span class="eyebrow">DOCUMENT DETAIL</span>
+          <h1 id="documentTitle">正在读取文档……</h1>
+          <p id="documentSubtitle">文档元数据、产品归属和独立知识片段</p>
+        </div>
+        <div class="detail-status-card">
+          <span>当前状态</span>
+          <strong id="publicationState">读取中</strong>
+          <small id="versionState">—</small>
+        </div>
+      </section>
+
+      <section class="metadata-card">
+        <div class="section-heading">
+          <div><span class="eyebrow">OWNERSHIP</span><h2>文档与产品归属</h2></div>
+          <div class="detail-toolbar">
+            <button id="reindexButton" class="button ghost" type="button">重算向量</button>
+            <button id="withdrawButton" class="button ghost" type="button">撤回</button>
+            <button id="publishButton" class="button primary" type="button">审核并发布</button>
+          </div>
+        </div>
+        <form id="metadataForm" class="metadata-grid">
+          <label class="field wide">
+            <span>文档标题</span>
+            <input id="titleInput" maxlength="240" required />
+          </label>
+          <label class="field">
+            <span>知识类型</span>
+            <select id="domainInput">
+              <option value="company_public">公司公开资料</option>
+              <option value="product_public">产品资料</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>所属公司标识</span>
+            <input id="ownerCompanyInput" maxlength="120" required />
+            <small>公开问答仅使用 wuxi-gougelila；其他归属不会进入公开检索。</small>
+          </label>
+          <label class="field product-field">
+            <span>所属品牌</span>
+            <select id="brandInput">
+              <option value="">待设置 / 多品牌</option>
+              <option value="gougelila">Gougelila（狗哥里啦）</option>
+              <option value="chongqin">ChongQin（宠沁）</option>
+              <option value="ckin-pet">CKIN PET</option>
+            </select>
+          </label>
+          <label class="field wide product-field">
+            <span>产品标识</span>
+            <input id="productIdsInput" placeholder="多个标识用逗号分隔，例如 smart-feeder-video, water-fountain-uvc" />
+            <small>宣传册包含多个产品时可以留空；单品资料建议填写稳定、可读的产品标识。</small>
+          </label>
+          <label class="field">
+            <span>证据类型</span>
+            <select id="evidenceKindInput">
+              <option value="official_material">官方资料</option>
+              <option value="operator_curated">运营校对</option>
+              <option value="external_reference">外部参考</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>公开范围</span>
+            <select id="visibilityInput">
+              <option value="public">公开问答可用</option>
+              <option value="internal">仅内部</option>
+              <option value="private">私有</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>生效开始时间</span>
+            <input id="effectiveFromInput" type="datetime-local" />
+          </label>
+          <label class="field">
+            <span>生效结束时间</span>
+            <input id="effectiveToInput" type="datetime-local" />
+          </label>
+          <div class="form-actions wide">
+            <p>归属、有效期、片段或图片发生变更后会进入待审核草稿；当前已发布版本会继续服务，直至新版本发布或手动撤回。</p>
+            <button class="button primary" type="submit">保存文档信息</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="chunks-page-card">
+        <div class="section-heading chunk-heading">
+          <div><span class="eyebrow">PUBLICATION HISTORY</span><h2>发布版本与审计</h2></div>
+        </div>
+        <p class="section-note">发布会原子切换公开快照；回滚只切换公开版本，不覆盖当前草稿。</p>
+        <div id="versionList" class="chunk-list">
+          <div class="empty-state">正在读取发布历史……</div>
+        </div>
+      </section>
+
+      <section class="chunks-page-card media-page-card">
+        <div class="section-heading chunk-heading">
+          <div><span class="eyebrow">MEDIA ASSETS</span><h2>知识图片 <small id="mediaCount">0</small></h2></div>
+          <div class="detail-toolbar">
+            <button id="extractMediaButton" class="button ghost" type="button">从原文重新提取</button>
+          </div>
+        </div>
+        <p class="section-note">这里只展示原始 PDF/Excel 中真实存在的图片。可修改图片标题、产品标识及公开状态；聊天回答会按型号、关键词和原文位置匹配。</p>
+        <div id="mediaGrid" class="admin-media-grid">
+          <div class="empty-state">正在读取图片资产……</div>
+        </div>
+      </section>
+
+      <section class="chunks-page-card">
+        <div class="section-heading chunk-heading">
+          <div><span class="eyebrow">KNOWLEDGE CHUNKS</span><h2>独立知识片段 <small id="chunkCount">0</small></h2></div>
+          <div class="chunk-filters">
+            <input id="chunkSearch" type="search" placeholder="搜索片段内容或位置" />
+            <label><input id="enabledOnly" type="checkbox" /> 仅看已启用</label>
+          </div>
+        </div>
+        <p class="section-note">每个片段都会独立参与检索。可直接修改正文、启用或停用，并查看 PDF 页码或 Excel 工作表行号。</p>
+        <div id="chunkList" class="chunk-list detail-chunk-list">
+          <div class="empty-state">正在读取知识片段……</div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="authDialog" class="auth-dialog">
+      <form id="authForm" method="dialog">
+        <span class="eyebrow">ADMIN ACCESS</span>
+        <h2>登录知识库后台</h2>
+        <p>管理员令牌只保存在当前浏览器会话中。</p>
+        <label for="adminToken">管理员令牌</label>
+        <input id="adminToken" name="token" type="password" autocomplete="current-password" required />
+        <p id="authError" class="form-error" hidden></p>
+        <button class="button primary" type="submit">登录</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="{{ base_path }}/static/document_detail.js?v=20260921.4" defer></script>
+  </body>
+</html>

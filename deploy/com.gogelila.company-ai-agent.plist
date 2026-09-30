@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.gogelila.company-ai-agent</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/uenheng/miniforge3/envs/company-ai-agent/bin/python</string>
+        <string>-S</string>
+        <string>-m</string>
+        <string>uvicorn</string>
+        <string>company_agent.main:app</string>
+        <string>--host</string>
+        <string>0.0.0.0</string>
+        <string>--port</string>
+        <string>8000</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/uenheng/Library/Application Support/GogelilaAI/company-ai-agent</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/uenheng/miniforge3/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>PYTHONPATH</key>
+        <string>/Users/uenheng/Library/Application Support/GogelilaAI/company-ai-agent/src:/Users/uenheng/miniforge3/envs/company-ai-agent/lib/python3.11/site-packages</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/uenheng/Library/Application Support/GogelilaAI/company-ai-agent/data/company-ai-agent.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/uenheng/Library/Application Support/GogelilaAI/company-ai-agent/data/company-ai-agent.err.log</string>
+</dict>
+</plist>

@@ -1,0 +1,51 @@
+﻿run,case_id,question,status,reason_code,evidence_status,wall_ms,topic_check_ms,retrieval_ms,generation_ms,repair_ms,cache_hit,policy_version
+1,QA-001,请介绍一下公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,10222,1169,22,9026,0,0,2026-09-24.2
+1,QA-002,请介绍无锡狗哥里啦电子商务有限公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,12657,0,45,12607,0,0,2026-09-24.2
+1,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,8548,0,43,8499,0,0,2026-09-24.2
+1,QA-009,宠沁和 CKIN PET 是同一个品牌吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,10066,0,24,10036,0,0,2026-09-24.2
+1,QA-012,ChongQin 指的是宠沁吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,8508,0,44,8455,0,0,2026-09-24.2
+1,QA-021,CKIN PET 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,30201,0,23,30171,14164,0,2026-09-24.2
+1,QA-022,ckinpet 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,14530,0,29,14493,0,0,2026-09-24.2
+1,QA-027,你们视频款喂食器有哪些功能？,grounded,OWNED_PRODUCT_ALLOWED,supported,19053,0,32,19014,0,0,2026-09-24.2
+1,QA-030,CKIN PET 智能视频喂食器怎么使用？,grounded,OWNED_PRODUCT_ALLOWED,supported,18628,0,27,18594,0,0,2026-09-24.2
+1,QA-040,请介绍 CKIN PET UVC 饮水机的功能。,grounded,OWNED_PRODUCT_ALLOWED,supported,32319,0,28,32281,15484,0,2026-09-24.2
+2,QA-001,请介绍一下公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,10614,1183,37,9386,0,0,2026-09-24.2
+2,QA-002,请介绍无锡狗哥里啦电子商务有限公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,21857,0,39,21812,12700,0,2026-09-24.2
+2,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5069,0,42,5022,0,0,2026-09-24.2
+2,QA-009,宠沁和 CKIN PET 是同一个品牌吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5403,0,40,5357,0,0,2026-09-24.2
+2,QA-012,ChongQin 指的是宠沁吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,4612,0,37,4570,0,0,2026-09-24.2
+2,QA-021,CKIN PET 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,7923,0,25,7889,0,0,2026-09-24.2
+2,QA-022,ckinpet 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,6756,0,41,6708,0,0,2026-09-24.2
+2,QA-027,你们视频款喂食器有哪些功能？,grounded,OWNED_PRODUCT_ALLOWED,supported,8697,0,49,8641,0,0,2026-09-24.2
+2,QA-030,CKIN PET 智能视频喂食器怎么使用？,grounded,OWNED_PRODUCT_ALLOWED,supported,8739,0,30,8702,0,0,2026-09-24.2
+2,QA-040,请介绍 CKIN PET UVC 饮水机的功能。,grounded,OWNED_PRODUCT_ALLOWED,supported,15855,0,46,15799,7536,0,2026-09-24.2
+3,QA-001,请介绍一下公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,9989,933,37,9014,0,0,2026-09-24.2
+3,QA-002,请介绍无锡狗哥里啦电子商务有限公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,18508,0,26,18477,9784,0,2026-09-24.2
+3,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5226,0,21,5200,0,0,2026-09-24.2
+3,QA-009,宠沁和 CKIN PET 是同一个品牌吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5138,0,39,5093,0,0,2026-09-24.2
+3,QA-012,ChongQin 指的是宠沁吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,4499,0,36,4456,0,0,2026-09-24.2
+3,QA-021,CKIN PET 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,12111,0,51,12050,4949,0,2026-09-24.2
+3,QA-022,ckinpet 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,6161,0,25,6128,0,0,2026-09-24.2
+3,QA-027,你们视频款喂食器有哪些功能？,grounded,OWNED_PRODUCT_ALLOWED,supported,8271,0,43,8221,0,0,2026-09-24.2
+3,QA-030,CKIN PET 智能视频喂食器怎么使用？,grounded,OWNED_PRODUCT_ALLOWED,supported,8829,0,37,8787,0,0,2026-09-24.2
+3,QA-040,请介绍 CKIN PET UVC 饮水机的功能。,grounded,OWNED_PRODUCT_ALLOWED,supported,14575,0,47,14520,6326,0,2026-09-24.2
+4,QA-001,请介绍一下公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,10307,924,41,9334,0,0,2026-09-24.2
+4,QA-002,请介绍无锡狗哥里啦电子商务有限公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,18307,0,43,18257,9242,0,2026-09-24.2
+4,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5244,0,20,5218,0,0,2026-09-24.2
+4,QA-009,宠沁和 CKIN PET 是同一个品牌吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5426,0,35,5384,0,0,2026-09-24.2
+4,QA-012,ChongQin 指的是宠沁吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,4399,0,35,4356,0,0,2026-09-24.2
+4,QA-021,CKIN PET 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,11779,0,24,11744,4685,0,2026-09-24.2
+4,QA-022,ckinpet 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,6681,0,44,6629,0,0,2026-09-24.2
+4,QA-027,你们视频款喂食器有哪些功能？,grounded,OWNED_PRODUCT_ALLOWED,supported,8567,0,41,8520,0,0,2026-09-24.2
+4,QA-030,CKIN PET 智能视频喂食器怎么使用？,grounded,OWNED_PRODUCT_ALLOWED,supported,8966,0,45,8915,0,0,2026-09-24.2
+4,QA-040,请介绍 CKIN PET UVC 饮水机的功能。,grounded,OWNED_PRODUCT_ALLOWED,supported,18827,0,34,18786,9273,0,2026-09-24.2
+5,QA-001,请介绍一下公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,9977,1006,40,8924,0,0,2026-09-24.2
+5,QA-002,请介绍无锡狗哥里啦电子商务有限公司,grounded,COMPANY_PUBLIC_ALLOWED,supported,16782,0,43,16732,8172,0,2026-09-24.2
+5,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5197,0,41,5150,0,0,2026-09-24.2
+5,QA-009,宠沁和 CKIN PET 是同一个品牌吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,5367,0,41,5319,0,0,2026-09-24.2
+5,QA-012,ChongQin 指的是宠沁吗？,grounded,COMPANY_PUBLIC_ALLOWED,supported,4656,0,43,4607,0,0,2026-09-24.2
+5,QA-021,CKIN PET 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,11739,0,29,11701,4646,0,2026-09-24.2
+5,QA-022,ckinpet 有哪些产品？,grounded,OWNED_PRODUCT_ALLOWED,supported,6625,0,41,6577,0,0,2026-09-24.2
+5,QA-027,你们视频款喂食器有哪些功能？,grounded,OWNED_PRODUCT_ALLOWED,supported,8206,0,47,8152,0,0,2026-09-24.2
+5,QA-030,CKIN PET 智能视频喂食器怎么使用？,grounded,OWNED_PRODUCT_ALLOWED,supported,8788,0,52,8730,0,0,2026-09-24.2
+5,QA-040,请介绍 CKIN PET UVC 饮水机的功能。,grounded,OWNED_PRODUCT_ALLOWED,supported,17016,0,49,16960,8084,0,2026-09-24.2

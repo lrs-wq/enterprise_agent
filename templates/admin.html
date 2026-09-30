@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="本地知识库运营管理" />
+    <title>知识库管理 · 公司智能助手</title>
+    <link rel="icon" href="{{ base_path }}/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ base_path }}/static/styles.css?v=20260921.4" />
+  </head>
+  <body class="admin-body" data-base-path="{{ base_path }}">
+    <header class="topbar">
+      <a class="brand" href="{{ base_path }}/">
+        <span class="brand-mark">AI</span>
+        <span><strong>知识库管理</strong><small>本地运营工作台</small></span>
+      </a>
+      <div class="topbar-actions">
+        <span id="healthBadge" class="health-badge pending"><i></i>正在检测</span>
+        <button id="logoutButton" class="button ghost" type="button" hidden>退出后台</button>
+        <a class="button ghost" href="{{ base_path }}/">返回问答</a>
+      </div>
+    </header>
+
+    <main class="admin-layout">
+      <section class="admin-hero">
+        <div>
+          <span class="eyebrow">KNOWLEDGE OPERATIONS</span>
+          <h1>维护助手能够引用的事实</h1>
+          <p>上传 PDF、Excel、CSV 或文本；可逐段查看、修改、启用和删除。</p>
+        </div>
+        <div class="stats-grid">
+          <div><strong id="documentCount">0</strong><span>可用文档</span></div>
+          <div><strong id="chunkCount">0</strong><span>知识片段</span></div>
+        </div>
+      </section>
+
+      <section class="upload-card">
+        <div class="upload-options">
+          <label for="knowledgeDomain">导入到知识域</label>
+          <select id="knowledgeDomain">
+            <option value="company_public">公司公开信息</option>
+            <option value="product_public">自有产品信息</option>
+          </select>
+          <span>新上传文档默认为“草稿 / 待审核”，审核发布后才参与问答。</span>
+        </div>
+        <div
+          id="dropZone"
+          class="drop-zone"
+          role="button"
+          tabindex="0"
+          aria-label="上传知识文件"
+        >
+          <div class="upload-icon">＋</div>
+          <div>
+            <h2>拖放文件到这里</h2>
+            <p>支持 PDF、XLSX、XLS、CSV、TXT、Markdown，单文件不超过 100MB</p>
+          </div>
+          <button class="button primary" type="button">选择文件</button>
+          <input id="fileInput" type="file" multiple accept=".pdf,.xlsx,.xls,.csv,.txt,.md" hidden />
+        </div>
+        <div id="uploadStatus" class="upload-status" hidden></div>
+      </section>
+
+      <section class="document-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">DOCUMENTS</span><h2>知识文档</h2></div>
+          <button id="refreshButton" class="button ghost" type="button">刷新</button>
+        </div>
+        <div id="documentList" class="document-list">
+          <div class="empty-state">正在读取知识库……</div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="authDialog" class="auth-dialog">
+      <form id="authForm" method="dialog">
+        <span class="eyebrow">ADMIN ACCESS</span>
+        <h2>登录知识库后台</h2>
+        <p>管理员令牌只保存在当前浏览器会话中，不会写入页面或服务日志。</p>
+        <label for="adminToken">管理员令牌</label>
+        <input id="adminToken" name="token" type="password" autocomplete="current-password" required />
+        <p id="authError" class="form-error" hidden></p>
+        <button class="button primary" type="submit">登录</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="{{ base_path }}/static/admin.js?v=20260921.4" defer></script>
+  </body>
+</html>

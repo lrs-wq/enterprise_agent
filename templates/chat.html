@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="本地运行的公司与产品知识助手" />
+    <title>公司智能助手</title>
+    <link rel="icon" href="{{ base_path }}/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ base_path }}/static/styles.css?v=20260921.4" />
+  </head>
+  <body data-base-path="{{ base_path }}">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <a class="brand" href="{{ base_path }}/">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>公司智能助手</strong>
+          <small>本地模型 · 知识可追溯</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span id="healthBadge" class="health-badge pending"><i></i>正在检测</span>
+        <a class="button ghost" href="{{ base_path }}/admin">知识库管理</a>
+      </div>
+    </header>
+
+    <main class="chat-layout">
+      <aside class="intro-panel">
+        <span class="eyebrow">LOCAL-FIRST AI AGENT</span>
+        <h1>让每次介绍<br />都有资料依据</h1>
+        <p>
+          从已上传的公司和产品资料中检索答案，显示分析摘要、来源页码与表格行号。
+        </p>
+        <div class="feature-list">
+          <div><span>01</span><p><strong>完全本地</strong><small>模型与文档不离开本机</small></p></div>
+          <div><span>02</span><p><strong>固定格式</strong><small>公司、产品信息结构化呈现</small></p></div>
+          <div><span>03</span><p><strong>证据可查</strong><small>回答关联原文位置</small></p></div>
+        </div>
+      </aside>
+
+      <section class="chat-card" aria-label="智能问答">
+        <div id="messages" class="messages" aria-live="polite">
+          <article class="message assistant welcome-message">
+            <div class="avatar">AI</div>
+            <div class="message-content">
+              <span class="message-label">智能助手</span>
+              <h2>你好，我可以介绍公司、产品与养宠知识</h2>
+              <p>公司与产品回答引用已发布资料；日常养宠回答使用本地模型通用知识并明确标识。</p>
+              <div class="suggestions">
+                <button data-question="请介绍一下公司及其核心业务">介绍公司</button>
+                <button data-question="公司目前有哪些产品？请分别说明定位和核心能力">了解产品</button>
+                <button data-question="请总结公司的核心优势，并给出资料来源">核心优势</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <form id="chatForm" class="chat-composer">
+          <label class="sr-only" for="questionInput">输入问题</label>
+          <textarea
+            id="questionInput"
+            rows="1"
+            maxlength="4000"
+            placeholder="询问公司、产品、能力或应用场景……"
+            required
+          ></textarea>
+          <button id="cancelButton" class="cancel-request" type="button" hidden>取消</button>
+          <button id="sendButton" type="submit" aria-label="发送问题">
+            <span>发送</span><b>↗</b>
+          </button>
+        </form>
+        <p class="composer-note">公司与产品请核对引用资料；模型通用知识可能不完整，不能替代兽医建议。</p>
+      </section>
+    </main>
+    <script src="{{ base_path }}/static/chat.js?v=20260928.1" defer></script>
+  </body>
+</html>

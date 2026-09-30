@@ -1,0 +1,6 @@
+﻿run,case_id,question,status,reason_code,evidence_status,wall_ms,topic_check_ms,retrieval_ms,generation_ms,repair_ms,cache_hit,policy_version
+1,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,3,0,0,0,0,1,2026-09-24.2
+2,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,3,0,0,0,0,1,2026-09-24.2
+3,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,3,0,0,0,0,1,2026-09-24.2
+4,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,3,0,0,0,0,1,2026-09-24.2
+5,QA-004,无锡狗哥里啦主要做什么业务？,grounded,COMPANY_PUBLIC_ALLOWED,supported,3,0,0,0,0,1,2026-09-24.2
