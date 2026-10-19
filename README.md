@@ -1,14 +1,32 @@
 # Company AI Agent
 
-## 许可证与商业使用 / License and commercial use
-
-**本仓库中维护者有权许可的原创内容采用 [PolyForm Noncommercial 1.0.0](LICENSE)，仅许可非商业用途；商业使用须另行取得书面授权。**
-第三方内容、必须保留上游许可的部分及旧版本已授予的权利不受此变更覆盖。详见 [版权与第三方声明](COPYRIGHT.md)。
-
-Original material the maintainer is entitled to license is available for noncommercial purposes under [PolyForm Noncommercial 1.0.0](LICENSE). Commercial use requires separate written permission. Third-party and previously granted rights are preserved; see [COPYRIGHT.md](COPYRIGHT.md).
-
 面向公司及产品介绍的本地知识库 AI Agent。当前版本运行在 Apple Silicon Mac，
 可通过局域网或受控公网反向代理访问；模型与知识数据均保留在本机。
+
+## 效果预览
+
+![公司助手：基于已发布知识返回回答、产品图片与来源](docs/assets/02-product-images-and-sources.jpg)
+
+| 带来源的公司回答 | 知识库运营工作台 |
+| --- | --- |
+| ![公司介绍与来源引用](docs/assets/03-grounded-company-answer.jpg) | ![知识库审核与发布界面](docs/assets/06-admin-dashboard.jpg) |
+
+界面截图取自仓库已有实测案例。可继续查看 [问答、产品图片与管理后台导览](docs/showcase/README.md) 或 [完整功能案例](docs/项目功能与典型案例.md)。
+
+## 工作流程
+
+![公司助手的知识导入、审核发布、检索生成与引用校验流程](docs/showcase/workflow.svg)
+
+## 项目演示
+
+1. 按下方“首次安装”和“导入现有资料”准备本机模型与知识库，并审核发布演示资料。
+2. 执行 `bash scripts/run-local.sh`，打开 [本机聊天页](http://127.0.0.1:8000/)。
+3. 依次演示“介绍公司” → 提问已发布产品的功能或图片 → 展开来源核对原文。
+4. 打开 [管理页](http://127.0.0.1:8000/admin)，演示文档片段、图片和发布版本管理。
+
+没有配置模型和已发布资料时，请先查看上方截图；仓库不会自动附带可用的业务知识库。
+
+---
 
 ## 获取项目与仓库内容
 
@@ -228,3 +246,10 @@ enterprise_agent/
 `answer.refusal_reason` 返回人类可读原因；前端只在它能提供非重复信息时显示独立卡片。
 `fallback_kind` 区分真实部分回答、仅范围说明、缺少证据和服务故障。混合品牌或非紧急
 混合医疗问题只把可独立回答的本公司部分交给模型处理。
+
+## 许可证与商业使用 / License and commercial use
+
+**本仓库中维护者有权许可的原创内容采用 [PolyForm Noncommercial 1.0.0](LICENSE)，仅许可非商业用途；商业使用须另行取得书面授权。**
+第三方内容、必须保留上游许可的部分及旧版本已授予的权利不受此变更覆盖。详见 [版权与第三方声明](COPYRIGHT.md)。
+
+Original material the maintainer is entitled to license is available for noncommercial purposes under [PolyForm Noncommercial 1.0.0](LICENSE). Commercial use requires separate written permission. Third-party and previously granted rights are preserved; see [COPYRIGHT.md](COPYRIGHT.md).

@@ -60,3 +60,6 @@ blobs/
 *.mlmodel
 *.mlmodelc/
 *.mlpackage/
+
+# Selected README documentation assets only
+!/docs/showcase/workflow.svg
